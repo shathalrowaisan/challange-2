@@ -1,8 +1,6 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -127,7 +125,7 @@ class _HomePageState extends State<HomePage> {
                       decoration: BoxDecoration(
                         color: const Color.fromARGB(255, 13, 45, 71),
                         borderRadius: BorderRadius.circular(40),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             color: Colors.black,
                             blurRadius: 5,
@@ -147,58 +145,56 @@ class _HomePageState extends State<HomePage> {
                                 padding: EdgeInsets.all(8.0),
                                 child: Text("Settings" , textAlign: TextAlign.start,),
                               ),
-                              Container(
-                                child: Column(
-                                  
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                      children: [
-                                        const Text("data1"),
-                                        Switch(value: r1, onChanged: (value) {
+                              Column(
+                                
+                                children: [
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      const Text("data1"),
+                                      Switch(value: r1, onChanged: (value) {
+                                        setState(() {
+                                          r1 = !r1 ;
+                                        });
+                                      } )
+                                    ],
+                                  ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      const Text("data1"),
+                                      Switch(
+                                        value: r2, 
+                                        onChanged: (value) {
                                           setState(() {
-                                            r1 = !r1 ;
+                                            r2 = value ;
                                           });
                                         } )
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                      children: [
-                                        const Text("data1"),
-                                        Switch(
-                                          value: r2, 
-                                          onChanged: (value) {
-                                            setState(() {
-                                              r2 = value ;
-                                            });
-                                          } )
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                      children: [
-                                        const Text("data1"),
-                                        Switch(value: r3, onChanged: (value) {
-                                          setState(() {
-                                            r3 = !r3 ;
-                                          });
-                                        } )
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                      children: [
-                                        const Text("data1"),
-                                        Switch(value: r4, onChanged: (value) {
-                                          setState(() {
-                                            r4 = !r4 ;
-                                          });
-                                        } )
-                                      ],
-                                    )
-                                  ],
-                                ),
+                                    ],
+                                  ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      const Text("data1"),
+                                      Switch(value: r3, onChanged: (value) {
+                                        setState(() {
+                                          r3 = !r3 ;
+                                        });
+                                      } )
+                                    ],
+                                  ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      const Text("data1"),
+                                      Switch(value: r4, onChanged: (value) {
+                                        setState(() {
+                                          r4 = !r4 ;
+                                        });
+                                      } )
+                                    ],
+                                  )
+                                ],
                               )
                             ],
                           ))
@@ -217,165 +213,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       )
-      
-      // ListView(
-      //   children: [
-      //     SizedBox(height: 30,),
-      //     Column(
-      //       children: [
-      //         Container(
-
-      //           decoration: BoxDecoration(
-      //             borderRadius: BorderRadius.circular(5)
-      //           ),
-      //           child: Image.asset("images/providor.png"),
-      //         ),
-
-      //         Text("course"),
-
-      //         Container(
-                
-      //           child: Column(
-                  
-      //             crossAxisAlignment: CrossAxisAlignment.center,
-      //             children: [
-      //               Text("UX Design", textAlign: TextAlign.left,),
-
-      //             Text("25 student", textAlign: TextAlign.left,)
-      //             ],
-      //           ),
-      //         )
-              
-      //       ],
-      //     ),
-      //     SizedBox(height: 30,),
-      //     Column(
-      //       children: [
-      //         Container(
-      //           height: 40,
-      //           width: 100,
-      //           decoration: BoxDecoration(
-      //             color: Color.fromARGB(255, 13, 45, 71),
-      //             borderRadius: BorderRadius.circular(40)
-      //           ),
-      //           child: TextButton(
-      //             onPressed: () { 
-      //               showDialog(
-                    
-      //               context: context, 
-      //               builder: ((context) => AlertDialog(
-                      
-      //                 content: Container(
-                        
-      //                   height: MediaQuery.of(context).size.height*0.50,
-
-      //                   decoration: BoxDecoration(
-      //                     // border: Border.all(
-      //                     //   color: Colors.green
-      //                     // ),
-                          
-      //                   ),
-      //                   child: Column(
-      //                     mainAxisAlignment: MainAxisAlignment.center,
-      //                     crossAxisAlignment: CrossAxisAlignment.center,
-      //                     children: [
-      //                       Container(
-      //                         height: 100,
-      //                         width: 100,
-      //                         decoration: BoxDecoration(
-                                
-      //                           borderRadius: BorderRadius.circular(5)
-      //                         ),
-      //                         child: Image.asset("images/check.png" )
-      //                       ),
-      //                       SizedBox(height: 10,),
-      //                       const Text("Success")
-      //                     ],
-      //                   ),
-      //                 )
-      //               ))
-      //             );
-                
-      //            },
-      //           child: Text("show alert", style: TextStyle(color: Colors.white),),),
-      //         ),
-      //         SizedBox(height: 10,),
-      //         Container(
-      //           height: 40,
-      //           width: 100,
-      //           decoration: BoxDecoration(
-      //             color: Color.fromARGB(255, 13, 45, 71),
-      //             borderRadius: BorderRadius.circular(40)
-      //           ),
-      //           child: TextButton(
-      //             onPressed: () { 
-      //               showModalBottomSheet(
-      //               context: context, 
-      //               builder: ((context) => Column(
-      //                 crossAxisAlignment: CrossAxisAlignment.start,
-      //                 children: [
-      //                   SizedBox(height: 10),
-      //                   Padding(
-      //                     padding: const EdgeInsets.all(8.0),
-      //                     child: Text("Settings" , textAlign: TextAlign.start,),
-      //                   ),
-      //                   Container(
-      //                     child: Column(
-                            
-      //                       children: [
-      //                         Row(
-      //                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      //                           children: [
-      //                             Text("data1"),
-      //                             Switch(value: true, onChanged: (value) {
-                                    
-      //                             } )
-      //                           ],
-      //                         ),
-      //                         Row(
-      //                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      //                           children: [
-      //                             Text("data1"),
-      //                             Switch(value: true, onChanged: (value) {
-                                    
-      //                             } )
-      //                           ],
-      //                         ),
-      //                         Row(
-      //                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      //                           children: [
-      //                             Text("data1"),
-      //                             Switch(value: true, onChanged: (value) {
-                                    
-      //                             } )
-      //                           ],
-      //                         ),
-      //                         Row(
-      //                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      //                           children: [
-      //                             Text("data1"),
-      //                             Switch(value: true, onChanged: (value) {
-                                    
-      //                             } )
-      //                           ],
-      //                         )
-      //                       ],
-      //                     ),
-      //                   )
-      //                 ],
-      //               ))
-      //             );
-                
-      //            },
-      //           child: Text("settings", style: TextStyle(color: Colors.white),),),
-      //         )
-              
-              
-      //       ],
-      //     )
-
-      //   ],
-      // )
+  
     );
   }
 }
